@@ -1,0 +1,84 @@
+<DOCTYPE html>
+	<html lang = "en">
+	<head>
+		{% load static %}
+		<meta charset="UTF-8">
+			<title>Жүктөө</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/back-to-top-scroll-1.css' %}">
+        <link rel="stylesheet" href="{% static 'css/back-to-top-scroll.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Bold-BS4-Animated-Back-To-Top.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="{% static 'css/Login-Form-Dark.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Pretty-Registration-Form.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Sidebar-Menu-1.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Sidebar-Menu.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+	</head>
+	<body>
+		<nav class="navbar navbar-dark navbar-expand-md sticky-top bg-primary float-none">
+        <div class="container-fluid"><img src="{% static 'img/logo.png' %}" width="30px" height="30px" alt="10px"><a class="navbar-brand text-center" href="{% url 'index' %}" style="margin: 0px 0px;">КМТУнун иш кагаздары</a>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav text-light ml-auto">
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+     <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li> <a href="{% url 'homepage' %}" style="color: white;">Уй бети</a></li>
+                <li> <a href="{% url 'upload_file' %}">Иш кагаздарды жүктөө</a></li>
+                <li> <a href="{% url 'viewfile' %}">Иш кагаздарды көрүү</a></li>
+                <li> <a href="{% url 'logout' %}">Чыгуу</a></li>
+            </ul>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <h2 style="text-align: center;">Документтерди жүктөө </h2>
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div id="div_id_title" class="form-group">
+                                    <label for="id_title" class="requiredField">
+                                        Документтин аты
+                                    </label>
+                                    <div class>
+                                        <input type="text" name="title" maxlength="100" class="textinput textInput form-control" required id="id_title">
+                                    </div>
+                                </div>
+                                <div id="div_id_document_up" class="form-group">
+                                    <label for="id_document_up" class="requiredField" style="width: 102; background-color: #007BFF; border-radius: 5px; padding: 6px; font-size: 15px; color: white; text-align: center;">
+                                        Документти таңдаңыз
+                                    </label>
+                                    <div class>
+                                        <input type="file" name="document_up" class="clearablefileinput form-control-file" required id="id_document_up" style="display: none">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Жүктөө</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+    <script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+	</body>
+	</html>
